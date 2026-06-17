@@ -1,0 +1,650 @@
+{
+  "slider": [
+    {
+      "src": "img/slider/slide-01.jpg",
+      "title": "Czerwona parasolka Józef Mehoffer"
+    },
+    {
+      "src": "img/slider/slide-02.jpg",
+      "title": "Matka Boska_Paczoltowska, kościół w Paczółtowicach"
+    },
+    {
+      "src": "img/slider/slide-03.jpg",
+      "title": "Matka_Boska"
+    },
+    {
+      "src": "img/slider/slide-04.jpg",
+      "title": "Pasja Turyńska Hans Memling"
+    },
+    {
+      "src": "img/slider/slide-05.jpg",
+      "title": "Portret małżonków Arnolfinich Jan van Eyck"
+    }
+  ],
+  "realizacje": [
+    {
+      "src": "img/realizacje/czerwona-parasolka-jozef-mehoffer.jpg",
+      "title": "Czerwona parasolka Józef Mehoffer"
+    },
+    {
+      "src": "img/realizacje/dama-z-lasiczka-leonardo-da-vinci.jpg",
+      "title": "Dama z Łasiczką, Leonardo da Vinci"
+    },
+    {
+      "src": "img/realizacje/dziewczyna-z-perla.jpg",
+      "title": "Dziewczyna z Perla"
+    },
+    {
+      "src": "img/realizacje/dziwny-ogrod-jozef-mehoffer.jpg",
+      "title": "Dziwny ogród, Józef Mehoffer"
+    },
+    {
+      "src": "img/realizacje/gwiazdzista-noc-vincenta-van-gogh.jpg",
+      "title": "Gwiaździsta noc Vincenta van Gogh"
+    },
+    {
+      "src": "img/realizacje/krzyk-edward-munch.jpg",
+      "title": "Krzyk, Edward Munch"
+    },
+    {
+      "src": "img/realizacje/matka-boska-wspomozenia-wiernych-cranach.jpg",
+      "title": "Matka_Boska_Wspomozenia_Wiernych_Cranach"
+    },
+    {
+      "src": "img/realizacje/pasja-turynska-hans-memling.jpg",
+      "title": "Pasja Turyńska Hans Memling"
+    },
+    {
+      "src": "img/realizacje/paysage-de-juan-les-pins-pablo-picasso.jpg",
+      "title": "Paysage de Juan-les-Pins Pablo Picasso"
+    },
+    {
+      "src": "img/realizacje/pocalunek-gustav-klimt.jpg",
+      "title": "Pocałunek Gustav Klimt"
+    },
+    {
+      "src": "img/realizacje/portret-malzonkow-arnolfinich-jan-van-eyck.jpg",
+      "title": "Portret małżonków Arnolfinich Jan van Eyck"
+    },
+    {
+      "src": "img/realizacje/szal-uniesien-wladyslaw-podkowinski.jpg",
+      "title": "Szał uniesień Władysław Podkowiński"
+    }
+  ],
+  "kopie": [
+    {
+      "slug": "dama-z-gronostajem-leonardo-da-vinci",
+      "title": "Dama z gronostajem Leonardo da Vinci",
+      "thumb": "img/kopie/dama-z-gronostajem-leonardo-da-vinci/thumb.jpg",
+      "thumb2": "img/kopie/dama-z-gronostajem-leonardo-da-vinci/thumb-b.jpg",
+      "images": [
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/00.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/01.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/02.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/03.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/04.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/05.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/06.jpg",
+        "img/kopie/dama-z-gronostajem-leonardo-da-vinci/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "dziewczyna-z-perla-johannes-vermeer",
+      "title": "Dziewczyna z perłą Johannes Vermeer",
+      "thumb": "img/kopie/dziewczyna-z-perla-johannes-vermeer/thumb.jpg",
+      "thumb2": "img/kopie/dziewczyna-z-perla-johannes-vermeer/thumb-b.jpg",
+      "images": [
+        "img/kopie/dziewczyna-z-perla-johannes-vermeer/00.jpg",
+        "img/kopie/dziewczyna-z-perla-johannes-vermeer/01.jpg",
+        "img/kopie/dziewczyna-z-perla-johannes-vermeer/02.jpg",
+        "img/kopie/dziewczyna-z-perla-johannes-vermeer/03.jpg",
+        "img/kopie/dziewczyna-z-perla-johannes-vermeer/04.jpg",
+        "img/kopie/dziewczyna-z-perla-johannes-vermeer/05.jpg"
+      ],
+      "count": 6
+    },
+    {
+      "slug": "fruit-and-flowers-orsola-maddalena-cacci",
+      "title": "Fruit and Flowers Orsola Maddalena Cacci",
+      "thumb": "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/thumb.jpg",
+      "thumb2": "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/thumb-b.jpg",
+      "images": [
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/00.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/01.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/02.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/03.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/04.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/05.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/06.jpg",
+        "img/kopie/fruit-and-flowers-orsola-maddalena-cacci/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "gwiazdzista-noc-vincenta-van-gogh",
+      "title": "Gwiaździsta noc Vincenta van Gogh",
+      "thumb": "img/kopie/gwiazdzista-noc-vincenta-van-gogh/thumb.jpg",
+      "thumb2": "img/kopie/gwiazdzista-noc-vincenta-van-gogh/thumb-b.jpg",
+      "images": [
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/00.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/01.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/02.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/03.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/04.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/05.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/06.jpg",
+        "img/kopie/gwiazdzista-noc-vincenta-van-gogh/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "jozef-krasnowolski-druhny",
+      "title": "Józef Krasnowolski Druhny",
+      "thumb": "img/kopie/jozef-krasnowolski-druhny/thumb.jpg",
+      "thumb2": "img/kopie/jozef-krasnowolski-druhny/thumb-b.jpg",
+      "images": [
+        "img/kopie/jozef-krasnowolski-druhny/00.jpg",
+        "img/kopie/jozef-krasnowolski-druhny/01.jpg",
+        "img/kopie/jozef-krasnowolski-druhny/02.jpg",
+        "img/kopie/jozef-krasnowolski-druhny/03.jpg",
+        "img/kopie/jozef-krasnowolski-druhny/04.jpg",
+        "img/kopie/jozef-krasnowolski-druhny/05.jpg"
+      ],
+      "count": 6
+    },
+    {
+      "slug": "kosciol-w-cassone-gustav-klimt",
+      "title": "Kościół w Cassone Gustav Klimt",
+      "thumb": "img/kopie/kosciol-w-cassone-gustav-klimt/thumb.jpg",
+      "thumb2": "img/kopie/kosciol-w-cassone-gustav-klimt/thumb-b.jpg",
+      "images": [
+        "img/kopie/kosciol-w-cassone-gustav-klimt/00.jpg",
+        "img/kopie/kosciol-w-cassone-gustav-klimt/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "krzyk-edvard-munch",
+      "title": "Krzyk Edvard Munch",
+      "thumb": "img/kopie/krzyk-edvard-munch/thumb.jpg",
+      "thumb2": "img/kopie/krzyk-edvard-munch/thumb-b.jpg",
+      "images": [
+        "img/kopie/krzyk-edvard-munch/00.jpg",
+        "img/kopie/krzyk-edvard-munch/01.jpg",
+        "img/kopie/krzyk-edvard-munch/02.jpg",
+        "img/kopie/krzyk-edvard-munch/03.jpg",
+        "img/kopie/krzyk-edvard-munch/04.jpg"
+      ],
+      "count": 5
+    },
+    {
+      "slug": "matka-boska-wspomozenia-wiernych-lucas-cranach",
+      "title": "Matka Boska Wspomożenia Wiernych Lucas Cranach",
+      "thumb": "img/kopie/matka-boska-wspomozenia-wiernych-lucas-cranach/thumb.jpg",
+      "thumb2": "img/kopie/matka-boska-wspomozenia-wiernych-lucas-cranach/thumb-b.jpg",
+      "images": [
+        "img/kopie/matka-boska-wspomozenia-wiernych-lucas-cranach/00.jpg",
+        "img/kopie/matka-boska-wspomozenia-wiernych-lucas-cranach/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "mona-lisa-leonardo-da-vinci",
+      "title": "Mona Lisa Leonardo da Vinci",
+      "thumb": "img/kopie/mona-lisa-leonardo-da-vinci/thumb.jpg",
+      "thumb2": "img/kopie/mona-lisa-leonardo-da-vinci/thumb-b.jpg",
+      "images": [
+        "img/kopie/mona-lisa-leonardo-da-vinci/00.jpg",
+        "img/kopie/mona-lisa-leonardo-da-vinci/01.jpg",
+        "img/kopie/mona-lisa-leonardo-da-vinci/02.jpg",
+        "img/kopie/mona-lisa-leonardo-da-vinci/03.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "slug": "pablo-picasso-pejzaz-z-lodkami",
+      "title": "Pablo Picasso Pejzaż z łódkami",
+      "thumb": "img/kopie/pablo-picasso-pejzaz-z-lodkami/thumb.jpg",
+      "thumb2": "img/kopie/pablo-picasso-pejzaz-z-lodkami/thumb-b.jpg",
+      "images": [
+        "img/kopie/pablo-picasso-pejzaz-z-lodkami/00.jpg",
+        "img/kopie/pablo-picasso-pejzaz-z-lodkami/01.jpg",
+        "img/kopie/pablo-picasso-pejzaz-z-lodkami/02.jpg",
+        "img/kopie/pablo-picasso-pejzaz-z-lodkami/03.jpg",
+        "img/kopie/pablo-picasso-pejzaz-z-lodkami/04.jpg",
+        "img/kopie/pablo-picasso-pejzaz-z-lodkami/05.jpg"
+      ],
+      "count": 6
+    },
+    {
+      "slug": "pasja-turynska-hans-memling",
+      "title": "Pasja Turyńska Hans Memling",
+      "thumb": "img/kopie/pasja-turynska-hans-memling/thumb.jpg",
+      "thumb2": "img/kopie/pasja-turynska-hans-memling/thumb-b.jpg",
+      "images": [
+        "img/kopie/pasja-turynska-hans-memling/00.jpg",
+        "img/kopie/pasja-turynska-hans-memling/01.jpg",
+        "img/kopie/pasja-turynska-hans-memling/02.jpg",
+        "img/kopie/pasja-turynska-hans-memling/03.jpg",
+        "img/kopie/pasja-turynska-hans-memling/04.jpg"
+      ],
+      "count": 5
+    },
+    {
+      "slug": "paysage-de-juan-les-pins-pablo-picasso",
+      "title": "Paysage de Juan-les-Pins Pablo Picasso",
+      "thumb": "img/kopie/paysage-de-juan-les-pins-pablo-picasso/thumb.jpg",
+      "thumb2": "img/kopie/paysage-de-juan-les-pins-pablo-picasso/thumb-b.jpg",
+      "images": [
+        "img/kopie/paysage-de-juan-les-pins-pablo-picasso/00.jpg",
+        "img/kopie/paysage-de-juan-les-pins-pablo-picasso/01.jpg",
+        "img/kopie/paysage-de-juan-les-pins-pablo-picasso/02.jpg",
+        "img/kopie/paysage-de-juan-les-pins-pablo-picasso/03.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "slug": "pocalunek-gustav-klimt",
+      "title": "Pocałunek Gustav Klimt",
+      "thumb": "img/kopie/pocalunek-gustav-klimt/thumb.jpg",
+      "thumb2": "img/kopie/pocalunek-gustav-klimt/thumb-b.jpg",
+      "images": [
+        "img/kopie/pocalunek-gustav-klimt/00.jpg",
+        "img/kopie/pocalunek-gustav-klimt/01.jpg",
+        "img/kopie/pocalunek-gustav-klimt/02.jpg",
+        "img/kopie/pocalunek-gustav-klimt/03.jpg",
+        "img/kopie/pocalunek-gustav-klimt/04.jpg",
+        "img/kopie/pocalunek-gustav-klimt/05.jpg",
+        "img/kopie/pocalunek-gustav-klimt/06.jpg",
+        "img/kopie/pocalunek-gustav-klimt/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "portret-malzonkow-arnolfinich-jan-van-eyck",
+      "title": "Portret małżonków Arnolfinich Jan van Eyck",
+      "thumb": "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/thumb.jpg",
+      "thumb2": "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/thumb-b.jpg",
+      "images": [
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/00.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/01.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/02.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/03.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/04.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/05.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/06.jpg",
+        "img/kopie/portret-malzonkow-arnolfinich-jan-van-eyck/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "szal-uniesien-wladyslaw-podkowinski",
+      "title": "Szał uniesień Władysław Podkowiński",
+      "thumb": "img/kopie/szal-uniesien-wladyslaw-podkowinski/thumb.jpg",
+      "thumb2": "img/kopie/szal-uniesien-wladyslaw-podkowinski/thumb-b.jpg",
+      "images": [
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/00.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/01.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/02.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/03.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/04.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/05.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/06.jpg",
+        "img/kopie/szal-uniesien-wladyslaw-podkowinski/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "widok-na-kopiec-kosciuszki-w-krakowie-stanislaw-wyspianski",
+      "title": "Widok na Kopiec Kościuszki w Krakowie Stanisław Wyspiański",
+      "thumb": "img/kopie/widok-na-kopiec-kosciuszki-w-krakowie-stanislaw-wyspianski/thumb.jpg",
+      "thumb2": "img/kopie/widok-na-kopiec-kosciuszki-w-krakowie-stanislaw-wyspianski/thumb-b.jpg",
+      "images": [
+        "img/kopie/widok-na-kopiec-kosciuszki-w-krakowie-stanislaw-wyspianski/00.jpg",
+        "img/kopie/widok-na-kopiec-kosciuszki-w-krakowie-stanislaw-wyspianski/01.jpg"
+      ],
+      "count": 2
+    }
+  ],
+  "konserwacje": [
+    {
+      "slug": "01-wlodzimierz-tetmajer-kobieta-z-galeziami",
+      "title": "Włodzimierz Tetmajer kobieta z gałeziami",
+      "thumb": "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/thumb.jpg",
+      "thumb2": "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/00.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/01.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/02.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/03.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/04.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/05.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/06.jpg",
+        "img/konserwacje/01-wlodzimierz-tetmajer-kobieta-z-galeziami/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "02-madonna-sykstynska-wedlug-rafaela-santi",
+      "title": "Madonna Sykstyńska, według Rafaela Santi",
+      "thumb": "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/thumb.jpg",
+      "thumb2": "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/00.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/01.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/02.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/03.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/04.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/05.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/06.jpg",
+        "img/konserwacje/02-madonna-sykstynska-wedlug-rafaela-santi/07.jpg"
+      ],
+      "count": 8
+    },
+    {
+      "slug": "03-widok-z-kazimierza",
+      "title": "Widok z Kazimierza",
+      "thumb": "img/konserwacje/03-widok-z-kazimierza/thumb.jpg",
+      "thumb2": "img/konserwacje/03-widok-z-kazimierza/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/03-widok-z-kazimierza/00.jpg",
+        "img/konserwacje/03-widok-z-kazimierza/01.jpg",
+        "img/konserwacje/03-widok-z-kazimierza/02.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "slug": "04-jezus",
+      "title": "Jezus",
+      "thumb": "img/konserwacje/04-jezus/thumb.jpg",
+      "thumb2": "img/konserwacje/04-jezus/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/04-jezus/00.jpg",
+        "img/konserwacje/04-jezus/01.jpg",
+        "img/konserwacje/04-jezus/02.jpg",
+        "img/konserwacje/04-jezus/03.jpg",
+        "img/konserwacje/04-jezus/04.jpg"
+      ],
+      "count": 5
+    },
+    {
+      "slug": "07-dworek",
+      "title": "Dworek",
+      "thumb": "img/konserwacje/07-dworek/thumb.jpg",
+      "thumb2": "img/konserwacje/07-dworek/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/07-dworek/00.jpg",
+        "img/konserwacje/07-dworek/01.jpg",
+        "img/konserwacje/07-dworek/02.jpg",
+        "img/konserwacje/07-dworek/03.jpg",
+        "img/konserwacje/07-dworek/04.jpg"
+      ],
+      "count": 5
+    },
+    {
+      "slug": "cud-sw-luisa-beltran",
+      "title": "Cud Św. Luisa Beltran",
+      "thumb": "img/konserwacje/cud-sw-luisa-beltran/thumb.jpg",
+      "thumb2": "img/konserwacje/cud-sw-luisa-beltran/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/cud-sw-luisa-beltran/00.jpg",
+        "img/konserwacje/cud-sw-luisa-beltran/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "matka-boska-z-dzieciatkiem-kosciol-w-rudawie",
+      "title": "Matka Boska z Dzieciątkiem, kościół w Rudawie",
+      "thumb": "img/konserwacje/matka-boska-z-dzieciatkiem-kosciol-w-rudawie/thumb.jpg",
+      "thumb2": "img/konserwacje/matka-boska-z-dzieciatkiem-kosciol-w-rudawie/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/matka-boska-z-dzieciatkiem-kosciol-w-rudawie/00.jpg",
+        "img/konserwacje/matka-boska-z-dzieciatkiem-kosciol-w-rudawie/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "opactwo-benedyktynow-w-tyncu-obraz-olejny",
+      "title": "Opactwo Benedyktynów w Tyńcu, obraz olejny",
+      "thumb": "img/konserwacje/opactwo-benedyktynow-w-tyncu-obraz-olejny/thumb.jpg",
+      "thumb2": "img/konserwacje/opactwo-benedyktynow-w-tyncu-obraz-olejny/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/opactwo-benedyktynow-w-tyncu-obraz-olejny/00.jpg",
+        "img/konserwacje/opactwo-benedyktynow-w-tyncu-obraz-olejny/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "pejzaz-1",
+      "title": "Pejzaż 1",
+      "thumb": "img/konserwacje/pejzaz-1/thumb.jpg",
+      "thumb2": "img/konserwacje/pejzaz-1/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/pejzaz-1/00.jpg",
+        "img/konserwacje/pejzaz-1/01.jpg",
+        "img/konserwacje/pejzaz-1/02.jpg",
+        "img/konserwacje/pejzaz-1/03.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "slug": "pejzaz-2",
+      "title": "Pejzaż 2",
+      "thumb": "img/konserwacje/pejzaz-2/thumb.jpg",
+      "thumb2": "img/konserwacje/pejzaz-2/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/pejzaz-2/00.jpg",
+        "img/konserwacje/pejzaz-2/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "pejzaz-z-dworem",
+      "title": "Pejzaż z dworem",
+      "thumb": "img/konserwacje/pejzaz-z-dworem/thumb.jpg",
+      "thumb2": "img/konserwacje/pejzaz-z-dworem/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/pejzaz-z-dworem/00.jpg",
+        "img/konserwacje/pejzaz-z-dworem/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "pejzaz-l-leprou",
+      "title": "Pejzaż, L.Leprou",
+      "thumb": "img/konserwacje/pejzaz-l-leprou/thumb.jpg",
+      "thumb2": "img/konserwacje/pejzaz-l-leprou/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/pejzaz-l-leprou/00.jpg",
+        "img/konserwacje/pejzaz-l-leprou/01.jpg",
+        "img/konserwacje/pejzaz-l-leprou/02.jpg",
+        "img/konserwacje/pejzaz-l-leprou/03.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "slug": "portret-kobiety",
+      "title": "Portret kobiety",
+      "thumb": "img/konserwacje/portret-kobiety/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-kobiety/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-kobiety/00.jpg",
+        "img/konserwacje/portret-kobiety/01.jpg",
+        "img/konserwacje/portret-kobiety/02.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "slug": "portret-kobiety-2",
+      "title": "Portret kobiety 2",
+      "thumb": "img/konserwacje/portret-kobiety-2/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-kobiety-2/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-kobiety-2/00.jpg",
+        "img/konserwacje/portret-kobiety-2/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "portret-kobiety-siedzacej",
+      "title": "Portret kobiety siedzącej",
+      "thumb": "img/konserwacje/portret-kobiety-siedzacej/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-kobiety-siedzacej/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-kobiety-siedzacej/00.jpg",
+        "img/konserwacje/portret-kobiety-siedzacej/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "portret-krolowej",
+      "title": "Portret królowej",
+      "thumb": "img/konserwacje/portret-krolowej/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-krolowej/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-krolowej/00.jpg",
+        "img/konserwacje/portret-krolowej/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "portret-mezczyzny-z-dziewczynka",
+      "title": "Portret mezczyzny z dziewczynką",
+      "thumb": "img/konserwacje/portret-mezczyzny-z-dziewczynka/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-mezczyzny-z-dziewczynka/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-mezczyzny-z-dziewczynka/00.jpg",
+        "img/konserwacje/portret-mezczyzny-z-dziewczynka/01.jpg",
+        "img/konserwacje/portret-mezczyzny-z-dziewczynka/02.jpg",
+        "img/konserwacje/portret-mezczyzny-z-dziewczynka/03.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "slug": "portret-szlachcica",
+      "title": "Portret szlachcica",
+      "thumb": "img/konserwacje/portret-szlachcica/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-szlachcica/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-szlachcica/00.jpg",
+        "img/konserwacje/portret-szlachcica/01.jpg",
+        "img/konserwacje/portret-szlachcica/02.jpg",
+        "img/konserwacje/portret-szlachcica/03.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "slug": "portret-z-lasiczka",
+      "title": "Portret z łąsiczką",
+      "thumb": "img/konserwacje/portret-z-lasiczka/thumb.jpg",
+      "thumb2": "img/konserwacje/portret-z-lasiczka/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/portret-z-lasiczka/00.jpg",
+        "img/konserwacje/portret-z-lasiczka/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "przemienienie-panskie-kosciol-w-bedzinie",
+      "title": "Przemienienie Pańskie, kościół w Będzinie",
+      "thumb": "img/konserwacje/przemienienie-panskie-kosciol-w-bedzinie/thumb.jpg",
+      "thumb2": "img/konserwacje/przemienienie-panskie-kosciol-w-bedzinie/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/przemienienie-panskie-kosciol-w-bedzinie/00.jpg",
+        "img/konserwacje/przemienienie-panskie-kosciol-w-bedzinie/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "swiety-jan-ewangelista",
+      "title": "Swięty Jan Ewangelista",
+      "thumb": "img/konserwacje/swiety-jan-ewangelista/thumb.jpg",
+      "thumb2": "img/konserwacje/swiety-jan-ewangelista/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/swiety-jan-ewangelista/00.jpg",
+        "img/konserwacje/swiety-jan-ewangelista/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "wall",
+      "title": "Wall",
+      "thumb": "img/konserwacje/wall/thumb.jpg",
+      "thumb2": "img/konserwacje/wall/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/wall/00.jpg",
+        "img/konserwacje/wall/01.jpg",
+        "img/konserwacje/wall/02.jpg",
+        "img/konserwacje/wall/03.jpg",
+        "img/konserwacje/wall/04.jpg",
+        "img/konserwacje/wall/05.jpg"
+      ],
+      "count": 6
+    },
+    {
+      "slug": "woman",
+      "title": "Woman",
+      "thumb": "img/konserwacje/woman/thumb.jpg",
+      "thumb2": "img/konserwacje/woman/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/woman/00.jpg",
+        "img/konserwacje/woman/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "sw-franciszek-z-asyzu",
+      "title": "Św. Franciszek z Asyżu",
+      "thumb": "img/konserwacje/sw-franciszek-z-asyzu/thumb.jpg",
+      "thumb2": "img/konserwacje/sw-franciszek-z-asyzu/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/sw-franciszek-z-asyzu/00.jpg",
+        "img/konserwacje/sw-franciszek-z-asyzu/01.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "slug": "sw-izydor-oracz",
+      "title": "Św. Izydor Oracz",
+      "thumb": "img/konserwacje/sw-izydor-oracz/thumb.jpg",
+      "thumb2": "img/konserwacje/sw-izydor-oracz/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/sw-izydor-oracz/00.jpg",
+        "img/konserwacje/sw-izydor-oracz/01.jpg",
+        "img/konserwacje/sw-izydor-oracz/02.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "slug": "sw-izydor-oracz-kosciol-swietej-trojcy-w-bedzinie",
+      "title": "Św. Izydor Oracz, Kościół Świętej Trójcy w Będzinie",
+      "thumb": "img/konserwacje/sw-izydor-oracz-kosciol-swietej-trojcy-w-bedzinie/thumb.jpg",
+      "thumb2": "img/konserwacje/sw-izydor-oracz-kosciol-swietej-trojcy-w-bedzinie/thumb-b.jpg",
+      "images": [
+        "img/konserwacje/sw-izydor-oracz-kosciol-swietej-trojcy-w-bedzinie/00.jpg",
+        "img/konserwacje/sw-izydor-oracz-kosciol-swietej-trojcy-w-bedzinie/01.jpg",
+        "img/konserwacje/sw-izydor-oracz-kosciol-swietej-trojcy-w-bedzinie/02.jpg"
+      ],
+      "count": 3
+    }
+  ],
+  "omnie": {
+    "bg": "img/omnie/tlo-omnie.jpg",
+    "portret": "img/omnie/portret.jpg",
+    "gallery": [
+      {
+        "src": "img/omnie/pracownia-w-siedlcu.jpg",
+        "title": "Pracownia w Siedlcu"
+      },
+      {
+        "src": "img/omnie/zdj-do-tlo-kontakt.jpg",
+        "title": "Zdj do tlo kontakt"
+      },
+      {
+        "src": "img/omnie/zofia-siek-mlicka.jpg",
+        "title": "Zofia Siek-Mlicka"
+      }
+    ]
+  }
+}
