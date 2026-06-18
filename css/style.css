@@ -917,6 +917,8 @@ p + p { margin-top: var(--space-sm); }
   background-color: var(--color-bg-dark);
   color: var(--color-footer-text);
   padding: var(--space-xl) 0 var(--space-md);
+  /* jaśniejszy tekst — szarość gubiła się na brązowym tle */
+  --color-muted: rgba(255, 255, 255, 0.72);
 }
 
 .footer__grid {
@@ -1454,10 +1456,11 @@ p + p { margin-top: var(--space-sm); }
 
 /* ----- Tekstura tła na całej stronie (tlo.jpg) ----- */
 body {
-  background-color: var(--color-bg-warm);
-  background-image: linear-gradient(rgba(250, 247, 242, 0.84), rgba(250, 247, 242, 0.84)), url('../img/tlo.jpg');
+  background-color: #e8dccb;
+  background-image:
+    linear-gradient(rgba(251, 248, 242, 0.5), rgba(251, 248, 242, 0.5)),
+    url('../img/tlo.jpg');
   background-repeat: repeat;
-  background-size: auto, 360px;
 }
 
 /* ----- Hero slider ----- */
