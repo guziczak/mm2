@@ -1579,6 +1579,48 @@ body {
   transform: scale(1.05);
 }
 
+/* ----- Opisy dzieł pod galerią (dodane przez nas pod SEO) ----- */
+.art-grid { align-items: start; }
+
+.art-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.art-card > .gallery-item {
+  flex: 0 0 auto;
+}
+
+.art-seo {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--color-muted); /* szara czcionka — wyraźnie „dodatek SEO” */
+}
+
+.art-seo__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-accent);
+  margin-bottom: 5px;
+  text-shadow: 0 0 12px rgba(184, 151, 106, 0.6); /* delikatny glow znacznika */
+}
+
+.art-seo__label::before { content: "\2726  "; } /* ✦ — „główka” bloku */
+
+.art-seo p { margin: 0 0 6px; }
+
+.art-seo a {
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+.art-seo a:hover { color: var(--color-accent); }
+
 /* ----- Lightbox ----- */
 .lightbox {
   position: fixed;
