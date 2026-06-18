@@ -173,30 +173,121 @@ function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
+  const RECIPIENT = 'zo.siek@interia.pl';
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const consent = form.querySelector('[name="consent"]');
-    if (consent && !consent.checked) {
-      alert('Proszę zaakceptować zgodę na przetwarzanie danych osobowych.');
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    // Pola wymagane (formularz ma novalidate, więc sprawdzamy ręcznie)
+    const required = ['name', 'email', 'subject', 'message'];
+    const missing = required.find((k) => !String(data[k] || '').trim());
+    if (missing) {
+      showToast('Proszę uzupełnić wymagane pola.', 'error');
+      form.elements[missing]?.focus();
+      return;
+    }
+    if (!form.querySelector('[name="consent"]')?.checked) {
+      showToast('Proszę zaakceptować zgodę na przetwarzanie danych osobowych.', 'error');
       return;
     }
 
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.textContent = 'Wysyłanie...';
-    btn.disabled = true;
+    // Brak backendu — składamy wiadomość i otwieramy program pocztowy gościa.
+    const subject = `Zapytanie ze strony — ${data.subject}`;
+    const body =
+      `Imię i nazwisko: ${data.name}\n` +
+      `E-mail: ${data.email}\n` +
+      `Telefon: ${data.phone ? data.phone : '—'}\n\n` +
+      `${data.message}\n`;
+    const href =
+      `mailto:${RECIPIENT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Simulate send — replace with real endpoint
-    setTimeout(() => {
-      btn.textContent = 'Wysłano!';
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }, 2000);
-    }, 1000);
+    showToast('Otwieram Twój program pocztowy…', 'success');
+    window.location.href = href;
+    setTimeout(() => form.reset(), 1500);
   });
+}
+
+/* ----- Toast (styl Sonner: zwijane w talię, rozwijane po najechaniu) ----- */
+let toastsExpanded = false;
+let toastCollapseTimer = null;
+
+function showToast(message, type = 'info', duration = 4000) {
+  let stack = document.querySelector('.toast-stack');
+  if (!stack) {
+    stack = document.createElement('div');
+    stack.className = 'toast-stack';
+    stack.setAttribute('role', 'status');
+    stack.setAttribute('aria-live', 'polite');
+    document.body.appendChild(stack);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'toast toast--' + type;
+  toast.textContent = message;
+  toast._duration = duration;
+  stack.appendChild(toast);
+
+  toast.addEventListener('mouseenter', expandToasts);
+  toast.addEventListener('mouseleave', scheduleCollapseToasts);
+  toast.addEventListener('click', () => removeToast(toast));
+
+  requestAnimationFrame(layoutToasts); // wjazd + przebudowa talii
+  toast._timer = setTimeout(() => removeToast(toast), duration);
+}
+
+// Układa stos: zwinięty (talia) lub rozwinięty (lista). 0 = najnowszy = na wierzchu (na dole).
+function layoutToasts() {
+  const stack = document.querySelector('.toast-stack');
+  if (!stack) return;
+  const toasts = [...stack.children].filter((t) => !t._removing);
+  const n = toasts.length;
+  const GAP = 12, PEEK = 16, SCALE_STEP = 0.06, VISIBLE = 3;
+
+  let offset = 0;
+  for (let front = 0; front < n; front++) {
+    const t = toasts[n - 1 - front];
+    if (toastsExpanded) {
+      t.style.transform = `translateY(${-offset}px) scale(1)`;
+      t.style.opacity = '1';
+      offset += t.offsetHeight + GAP;
+    } else {
+      const scale = Math.max(0, 1 - front * SCALE_STEP);
+      t.style.transform = `translateY(${-front * PEEK}px) scale(${scale})`;
+      t.style.opacity = front < VISIBLE ? '1' : '0';
+    }
+    t.style.zIndex = String(1000 - front);
+  }
+}
+
+function removeToast(toast) {
+  if (!toast || toast._removing) return;
+  toast._removing = true;
+  clearTimeout(toast._timer);
+  toast.style.opacity = '0';
+  toast.style.transform = 'translateY(16px) scale(0.9)';
+  layoutToasts();
+  setTimeout(() => toast.remove(), 300);
+}
+
+function expandToasts() {
+  clearTimeout(toastCollapseTimer);
+  if (toastsExpanded) return;
+  toastsExpanded = true;
+  document.querySelectorAll('.toast').forEach((t) => clearTimeout(t._timer)); // pauza autoznikania
+  layoutToasts();
+}
+
+function scheduleCollapseToasts() {
+  clearTimeout(toastCollapseTimer);
+  toastCollapseTimer = setTimeout(() => {
+    toastsExpanded = false;
+    document.querySelectorAll('.toast').forEach((t) => {
+      if (!t._removing) t._timer = setTimeout(() => removeToast(t), t._duration || 4000);
+    });
+    layoutToasts();
+  }, 140);
 }
 
 /* ----- Hero Slider ----- */

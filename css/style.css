@@ -1734,3 +1734,39 @@ body {
   .lightbox__nav { width: 42px; height: 64px; font-size: 2rem; }
   .lightbox__caption { font-size: var(--fs-base); }
 }
+
+/* ----- Toast (styl Sonner — zwijane w talię) ----- */
+.toast-stack {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-lg);
+  transform: translateX(-50%);
+  z-index: 3000;
+  width: min(92vw, 460px);
+  pointer-events: none;
+}
+
+.toast {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-dark);
+  color: var(--color-footer-text);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transform-origin: bottom center;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+
+.toast--error { border-left-color: var(--color-error); }
+.toast--success { border-left-color: var(--color-success); }
