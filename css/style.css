@@ -985,7 +985,9 @@ p + p { margin-top: var(--space-sm); }
   bottom: 0;
   left: 0;
   width: 100%;
-  background: var(--color-bg-dark);
+  background: rgba(38, 34, 28, 0.88);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
   color: var(--color-footer-text);
   padding: var(--space-md) 0;
   z-index: 9999;
