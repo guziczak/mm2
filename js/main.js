@@ -253,7 +253,7 @@ function showToast(message, type = 'info', duration = 4000) {
   // Podnieś toasty nad baner cookie, gdy jest otwarty
   const cookie = document.querySelector('.cookie-banner.visible');
   stack.style.bottom = cookie
-    ? `calc(var(--space-lg) + ${cookie.offsetHeight + 12}px)`
+    ? `calc(var(--space-md) + ${cookie.offsetHeight + 12}px)`
     : '';
 
   const toast = document.createElement('div');
@@ -276,15 +276,22 @@ function layoutToasts() {
   if (!stack) return;
   const toasts = [...stack.children].filter((t) => !t._removing);
   const n = toasts.length;
-  const GAP = 12, PEEK = 16, SCALE_STEP = 0.06, VISIBLE = 3;
+  const GAP = 12, PEEK = 16, SCALE_STEP = 0.06;
+  const VISIBLE = 3;       // ile kart wystaje w zwiniętej talii
+  const VISIBLE_OPEN = 5;  // ile najnowszych pokazujemy po rozwinięciu
 
   let offset = 0;
   for (let front = 0; front < n; front++) {
     const t = toasts[n - 1 - front];
     if (toastsExpanded) {
-      t.style.transform = `translateY(${-offset}px) scale(1)`;
-      t.style.opacity = '1';
-      offset += t.offsetHeight + GAP;
+      if (front < VISIBLE_OPEN) {
+        t.style.transform = `translateY(${-offset}px) scale(1)`;
+        t.style.opacity = '1';
+        offset += t.offsetHeight + GAP;
+      } else {
+        t.style.transform = `translateY(${-offset}px) scale(0.96)`;
+        t.style.opacity = '0';
+      }
     } else {
       const scale = Math.max(0, 1 - front * SCALE_STEP);
       t.style.transform = `translateY(${-front * PEEK}px) scale(${scale})`;
