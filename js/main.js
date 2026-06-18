@@ -244,7 +244,7 @@ function showToast(message, type = 'info', duration = 4000) {
   // Podnieś toasty nad baner cookie, gdy jest otwarty
   const cookie = document.querySelector('.cookie-banner.visible');
   stack.style.bottom = cookie
-    ? `calc(var(--space-md) + ${cookie.offsetHeight + 12}px)`
+    ? `calc(var(--space-sm) + ${cookie.offsetHeight + 12}px)`
     : '';
 
   const toast = document.createElement('div');

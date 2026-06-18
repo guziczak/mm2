@@ -1739,7 +1739,7 @@ body {
 .toast-stack {
   position: fixed;
   left: 50%;
-  bottom: var(--space-md);
+  bottom: var(--space-sm);
   transform: translateX(-50%);
   z-index: 10000; /* nad banerem cookie (9999) */
   width: min(92vw, 460px);
@@ -1768,6 +1768,8 @@ body {
   transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
   pointer-events: auto;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
   will-change: transform, opacity;
 }
 
