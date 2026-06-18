@@ -948,6 +948,11 @@ p + p { margin-top: var(--space-sm); }
   margin-bottom: var(--space-md);
 }
 
+.footer__links li {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
 .footer__links li + li {
   margin-top: var(--space-xs);
 }
