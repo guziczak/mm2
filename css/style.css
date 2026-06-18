@@ -1417,10 +1417,11 @@ p + p { margin-top: var(--space-sm); }
     bottom: calc(var(--space-md) + 64px);
   }
 
-  /* About image */
+  /* About image — pełna szerokość na mobile (portret jest kwadratowy) */
   .about-image {
     position: static;
-    max-height: 400px;
+    aspect-ratio: 1 / 1;
+    max-height: none;
   }
 }
 
