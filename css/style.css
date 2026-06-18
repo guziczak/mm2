@@ -1439,3 +1439,297 @@ p + p { margin-top: var(--space-sm); }
     align-items: center;
   }
 }
+
+/* ============================================================
+   ROZSZERZENIA: tło, slider, galerie, lightbox, rozwijanie
+   ============================================================ */
+
+/* ----- Tekstura tła na całej stronie (tlo.jpg) ----- */
+body {
+  background-color: var(--color-bg-warm);
+  background-image: linear-gradient(rgba(250, 247, 242, 0.84), rgba(250, 247, 242, 0.84)), url('../img/tlo.jpg');
+  background-repeat: repeat;
+  background-size: auto, 360px;
+}
+
+/* ----- Hero slider ----- */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #3a3228;
+  overflow: hidden;
+}
+
+.hero-slider__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  will-change: opacity;
+}
+
+.hero-slider__slide.is-active {
+  opacity: 1;
+}
+
+.hero-slider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 1;
+}
+
+.hero-slider__dots {
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-slider__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: transparent;
+  padding: 0;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.hero-slider__dot.is-active {
+  background: #fff;
+  transform: scale(1.15);
+}
+
+/* ----- Galeria: kafelek jako przycisk + nowe elementy ----- */
+.gallery-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.gallery-item__info {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 58%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.gallery-item:hover .gallery-item__info,
+.gallery-item:focus-visible .gallery-item__info {
+  opacity: 1;
+}
+
+.gallery-item__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(20, 18, 15, 0.68);
+  color: var(--color-accent-light);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  padding: 4px 9px;
+  border-radius: 100px;
+}
+
+/* układ przed/po (konserwacja) */
+.gallery-item--ba .ba {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+}
+
+.gallery-item--ba .ba img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item--ba:hover .ba img {
+  transform: scale(1.05);
+}
+
+/* ----- Lightbox ----- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 13, 11, 0.94);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.is-open {
+  display: flex;
+  animation: lb-fade 0.25s ease;
+}
+
+@keyframes lb-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox__stage {
+  margin: 0;
+  max-width: 92vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.lightbox__img {
+  max-width: 92vw;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 14px 60px rgba(0, 0, 0, 0.55);
+  border-radius: 2px;
+}
+
+.lightbox__caption {
+  color: var(--color-accent-light);
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  text-align: center;
+  padding: 0 var(--space-md);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.6rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+  width: 54px;
+  height: 86px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__nav--prev { left: 16px; }
+.lightbox__nav--next { right: 16px; }
+
+.lightbox__nav:hover,
+.lightbox__close:hover {
+  color: var(--color-accent);
+}
+
+.lightbox__counter {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--fs-sm);
+  letter-spacing: 1px;
+}
+
+/* ----- Rozwijany tekst ----- */
+.expandable__content {
+  position: relative;
+  overflow: hidden;
+  max-height: 11.5em;
+  transition: max-height 0.55s ease;
+}
+
+.expandable.is-open .expandable__content {
+  max-height: 240em;
+}
+
+.expandable:not(.is-open) .expandable__content::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4.5em;
+  background: linear-gradient(transparent, var(--color-bg-warm));
+  pointer-events: none;
+}
+
+.expandable__toggle {
+  margin-top: var(--space-sm);
+  color: var(--color-accent-dark);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: none;
+}
+
+.expandable__toggle:hover {
+  color: var(--color-accent);
+}
+
+/* ----- Nagłówek podstrony ze zdjęciem w tle ----- */
+.page-header--image {
+  position: relative;
+  background-color: #2b2b2b;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding-top: calc(var(--header-height) + var(--space-2xl));
+  padding-bottom: var(--space-2xl);
+}
+
+.page-header--image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 18, 15, 0.52);
+}
+
+.page-header--image > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header--image .page-header__title {
+  color: #fff;
+}
+
+.page-header--image .page-header__breadcrumb,
+.page-header--image .page-header__breadcrumb a {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 600px) {
+  .lightbox__nav { width: 42px; height: 64px; font-size: 2rem; }
+  .lightbox__caption { font-size: var(--fs-base); }
+}

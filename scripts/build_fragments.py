@@ -14,11 +14,16 @@ def tidy(s):
     return s
 def esc(s): return html.escape(tidy(s), quote=True)
 
+def plnum(n):
+    if n == 1: return "1 zdjęcie"
+    if 2 <= n % 10 <= 4 and not (12 <= n % 100 <= 14): return f"{n} zdjęcia"
+    return f"{n} zdjęć"
+
 def card(thumbs, images, title, meta, ba=False):
     """thumbs = lista 1-2 miniatur do kafelka; images = pelny zestaw do lightboxa."""
     data = "|".join(images)
     n = len(images)
-    badge = f'<span class="gallery-item__badge">{n} zdjęć</span>' if n > 1 else ""
+    badge = f'<span class="gallery-item__badge">{plnum(n)}</span>' if n > 1 else ""
     if ba and len(thumbs) >= 2:
         pic = (f'<span class="ba"><img src="{thumbs[0]}" alt="{esc(title)} — 1" loading="lazy">'
                f'<img src="{thumbs[1]}" alt="{esc(title)} — 2" loading="lazy"></span>')
