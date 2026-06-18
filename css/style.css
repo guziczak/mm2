@@ -1515,7 +1515,7 @@ body {
   width: 100%;
   padding: 0;
   border: 0;
-  background: none;
+  background-color: #ece4d8; /* placeholder, zanim doczyta się zdjęcie */
   text-align: left;
 }
 

@@ -140,6 +140,12 @@ function initRevealAnimations() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length) return;
 
+  // Brak wsparcia IntersectionObserver → pokaż wszystko od razu (bezpieczny fallback)
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -147,9 +153,19 @@ function initRevealAnimations() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  // threshold 0: kluczowe dla wysokich galerii na telefonie — przy 0.15 element
+  // wyższy niż ekran nigdy nie osiąga 15% widoczności i zostaje ukryty.
 
-  elements.forEach(el => observer.observe(el));
+  elements.forEach(el => {
+    // Elementy już w polu widzenia lub przewinięte powyżej — pokaż natychmiast,
+    // żeby nic nie zostało ukryte (np. po odświeżeniu z zachowaną pozycją).
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 }
 
 /* ----- Contact Form ----- */
