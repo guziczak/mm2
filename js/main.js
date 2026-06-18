@@ -2,14 +2,12 @@
    Zofia Siek-Mlicka — Main JavaScript
    ============================================================ */
 
-/* ----- Pozycja przewijania: ręczne przywracanie (bez "skoku od dołu") -----
-   Auto-restore przeglądarki odpala się, zanim doczytają się zdjęcia, i na długiej
-   stronie ląduje przy dole. Wyłączamy go i odtwarzamy pozycję sami, od razu po
-   sparsowaniu strony (układ jest stabilny dzięki zarezerwowanym wymiarom obrazów). */
+/* ----- Zapis pozycji przewijania -----
+   Samo PRZYWRACANIE robi mały inline-skrypt na końcu <body> — uruchamia się przed
+   pierwszym malowaniem i z wyłączoną płynnością, więc strona od razu jest na właściwej
+   pozycji (bez animowanego przewijania z góry). Tu tylko zapisujemy bieżącą pozycję. */
 (function () {
   if (!('scrollRestoration' in history)) return;
-  history.scrollRestoration = 'manual';
-
   const KEY = 'scrollY:' + location.pathname;
   let saveTimer = null;
   const save = () => {
@@ -20,13 +18,6 @@
     saveTimer = setTimeout(() => { save(); saveTimer = null; }, 150);
   }, { passive: true });
   window.addEventListener('pagehide', save);
-
-  let y = 0;
-  try { y = parseInt(sessionStorage.getItem(KEY) || '0', 10); } catch (e) {}
-  if (y > 0) {
-    window.scrollTo(0, y);
-    requestAnimationFrame(() => window.scrollTo(0, y));
-  }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

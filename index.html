@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <link rel="stylesheet" href="css/style.css?v=20260618l">
+  <link rel="stylesheet" href="css/style.css?v=20260618m">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -266,6 +266,22 @@
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="js/main.js?v=20260618l"></script>
+  <script>
+    /* Przywróć pozycję przewijania PRZED malowaniem, bez płynnej animacji */
+    (function () {
+      if (!('scrollRestoration' in history)) return;
+      history.scrollRestoration = 'manual';
+      try {
+        var y = parseInt(sessionStorage.getItem('scrollY:' + location.pathname) || '0', 10);
+        if (y > 0) {
+          var h = document.documentElement, prev = h.style.scrollBehavior;
+          h.style.scrollBehavior = 'auto';
+          window.scrollTo(0, y);
+          h.style.scrollBehavior = prev;
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="js/main.js?v=20260618m"></script>
 </body>
 </html>
