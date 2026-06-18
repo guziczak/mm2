@@ -2,6 +2,33 @@
    Zofia Siek-Mlicka — Main JavaScript
    ============================================================ */
 
+/* ----- Pozycja przewijania: ręczne przywracanie (bez "skoku od dołu") -----
+   Auto-restore przeglądarki odpala się, zanim doczytają się zdjęcia, i na długiej
+   stronie ląduje przy dole. Wyłączamy go i odtwarzamy pozycję sami, od razu po
+   sparsowaniu strony (układ jest stabilny dzięki zarezerwowanym wymiarom obrazów). */
+(function () {
+  if (!('scrollRestoration' in history)) return;
+  history.scrollRestoration = 'manual';
+
+  const KEY = 'scrollY:' + location.pathname;
+  let saveTimer = null;
+  const save = () => {
+    try { sessionStorage.setItem(KEY, String(Math.round(window.scrollY))); } catch (e) {}
+  };
+  window.addEventListener('scroll', () => {
+    if (saveTimer) return;
+    saveTimer = setTimeout(() => { save(); saveTimer = null; }, 150);
+  }, { passive: true });
+  window.addEventListener('pagehide', save);
+
+  let y = 0;
+  try { y = parseInt(sessionStorage.getItem(KEY) || '0', 10); } catch (e) {}
+  if (y > 0) {
+    window.scrollTo(0, y);
+    requestAnimationFrame(() => window.scrollTo(0, y));
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileNav();
@@ -222,6 +249,12 @@ function showToast(message, type = 'info', duration = 4000) {
     stack.setAttribute('aria-live', 'polite');
     document.body.appendChild(stack);
   }
+
+  // Podnieś toasty nad baner cookie, gdy jest otwarty
+  const cookie = document.querySelector('.cookie-banner.visible');
+  stack.style.bottom = cookie
+    ? `calc(var(--space-lg) + ${cookie.offsetHeight + 12}px)`
+    : '';
 
   const toast = document.createElement('div');
   toast.className = 'toast toast--' + type;

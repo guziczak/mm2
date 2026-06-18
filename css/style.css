@@ -1741,7 +1741,7 @@ body {
   left: 50%;
   bottom: var(--space-lg);
   transform: translateX(-50%);
-  z-index: 3000;
+  z-index: 10000; /* nad banerem cookie (9999) */
   width: min(92vw, 460px);
   pointer-events: none;
 }
