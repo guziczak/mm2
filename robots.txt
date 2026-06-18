@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guziczak.github.io/mm2/sitemap.xml
