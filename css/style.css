@@ -1741,7 +1741,7 @@ body {
 .toast-stack {
   position: fixed;
   left: 50%;
-  bottom: var(--space-sm);
+  bottom: var(--space-xs);
   transform: translateX(-50%);
   z-index: 10000; /* nad banerem cookie (9999) */
   width: min(92vw, 460px);
