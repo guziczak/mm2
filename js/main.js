@@ -2,12 +2,6 @@
    Zofia Siek-Mlicka — Main JavaScript
    ============================================================ */
 
-// Po (twardym) odświeżeniu zawsze startuj od góry — eliminuje skok przewijania,
-// gdy zdjęcia doczytują się i strona zmienia wysokość.
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileNav();
