@@ -1111,7 +1111,7 @@ p + p { margin-top: var(--space-sm); }
 }
 
 .about-image {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--border-radius);
   position: sticky;
