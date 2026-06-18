@@ -353,7 +353,7 @@ function initHeroSlider() {
     dots.children[index].classList.add('is-active');
   }
   function next() { go(index + 1); }
-  function start() { timer = setInterval(next, delay); }
+  function start() { stop(); timer = setInterval(next, delay); }
   function stop() { clearInterval(timer); }
   function restart() { stop(); start(); }
 
