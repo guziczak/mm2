@@ -1038,7 +1038,7 @@ p + p { margin-top: var(--space-sm); }
 }
 
 .cookie-banner__actions .btn.is-pulsing {
-  animation: cookieBtnPulse 0.6s ease 3;
+  animation: cookieBtnPulse 0.6s ease 2;
 }
 
 /* ----- 18. Mobile Phone Button ----- */
