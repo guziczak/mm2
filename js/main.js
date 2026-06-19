@@ -243,7 +243,14 @@ function initContactMap() {
   holder.querySelector('[data-load-map]')?.addEventListener('click', () => {
     showToast('Aby zobaczyć wersję Google Maps, zaakceptuj pliki cookies.', 'info');
     const banner = document.querySelector('.cookie-banner');
-    if (banner) banner.classList.add('visible');
+    if (!banner) return;
+    banner.classList.add('visible');
+    // Pulsnij przyciskami banera, żeby zwrócić uwagę, gdzie kliknąć
+    banner.querySelectorAll('.btn').forEach((b) => {
+      b.classList.remove('is-pulsing');
+      void b.offsetWidth; // reflow → restart animacji przy kolejnym kliknięciu
+      b.classList.add('is-pulsing');
+    });
   });
 }
 

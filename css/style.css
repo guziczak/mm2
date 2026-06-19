@@ -1031,6 +1031,16 @@ p + p { margin-top: var(--space-sm); }
   flex-shrink: 0;
 }
 
+/* Pulsowanie przycisków banera, gdy użytkownik kliknie mapę bez zgody */
+@keyframes cookieBtnPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(184, 151, 106, 0.45); }
+  50% { transform: scale(1.08); box-shadow: 0 0 0 7px rgba(184, 151, 106, 0); }
+}
+
+.cookie-banner__actions .btn.is-pulsing {
+  animation: cookieBtnPulse 0.6s ease 3;
+}
+
 /* ----- 18. Mobile Phone Button ----- */
 .mobile-cta {
   display: none;
