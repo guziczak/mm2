@@ -20,7 +20,7 @@
 
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <link rel="stylesheet" href="css/style.css?v=20260618v">
+  <link rel="stylesheet" href="css/style.css?v=20260619v4">
 
   <script type="application/ld+json">
   {
@@ -162,14 +162,17 @@
       </div>
 
       <!-- Map -->
-      <div class="map-container reveal">
-        <iframe
-          src="https://maps.google.com/maps?q=Siedlec%203%2C%2032-065%20Krzeszowice&hl=pl&z=16&output=embed"
-          allowfullscreen=""
-          loading="eager"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Lokalizacja — Siedlec 3, 32-065 Krzeszowice">
-        </iframe>
+      <div class="map-container reveal" data-map="https://maps.google.com/maps?q=Siedlec%203%2C%2032-065%20Krzeszowice&hl=pl&z=16&output=embed">
+        <button type="button" class="map-placeholder" data-load-map>
+          <picture>
+            <source media="(max-width: 768px)" srcset="img/mapa-kontakt-mobile.png">
+            <img src="img/mapa-kontakt.png" alt="Mapa — Siedlec 3, 32-065 Krzeszowice z okolicznymi punktami" loading="lazy" width="1920" height="720">
+          </picture>
+          <span class="map-placeholder__cover">
+            <span class="map-placeholder__btn">Pokaż interaktywną mapę</span>
+            <span class="map-placeholder__note">Po kliknięciu ładuje się interaktywna mapa Google.</span>
+          </span>
+        </button>
       </div>
     </div>
   </section>
@@ -248,6 +251,6 @@
       } catch (e) {}
     })();
   </script>
-  <script src="js/main.js?v=20260618v"></script>
+  <script src="js/main.js?v=20260619v"></script>
 </body>
 </html>

@@ -1253,6 +1253,78 @@ p + p { margin-top: var(--space-sm); }
   border: 0;
 }
 
+/* Placeholder mapy — pokazywany do czasu zgody na cookies (mapa Google) */
+.map-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  position: relative;
+  cursor: pointer;
+}
+
+.map-placeholder picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-placeholder__cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  text-align: center;
+  background: rgba(30, 26, 22, 0.45);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.map-placeholder:hover .map-placeholder__cover,
+.map-placeholder:focus-visible .map-placeholder__cover {
+  opacity: 1;
+}
+
+.map-placeholder__btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.map-placeholder__note {
+  max-width: 34ch;
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Mapa: na węższych ekranach poziomy prostokąt zamiast sztywnych 400px (inaczej na telefonie wychodzi kwadrat) */
+@media (max-width: 768px) {
+  .map-container {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* ----- 24. Media Queries ----- */
 @media (max-width: 1024px) {
   :root {

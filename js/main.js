@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollTop();
   initRevealAnimations();
   initContactForm();
+  initContactMap();
   initHeroSlider();
   initLightbox();
   initExpandable();
@@ -128,6 +129,9 @@ function initCookieConsent() {
 
   banner.querySelector('[data-accept]')?.addEventListener('click', () => {
     localStorage.setItem('cookies-accepted', 'true');
+    // Pełna zgoda → od razu podmień obrazek mapy na interaktywną mapę Google
+    const holder = document.querySelector('.map-container[data-map]');
+    if (holder) loadMap(holder);
     banner.classList.remove('visible');
     setTimeout(() => banner.remove(), 300);
   });
@@ -225,6 +229,36 @@ function initContactForm() {
     window.location.href = href;
     setTimeout(() => form.reset(), 1500);
   });
+}
+
+/* ----- Mapa kontaktowa (ładowana dopiero po zgodzie) -----
+   Domyślnie pokazujemy statyczny obrazek z img/mapa-kontakt.jpg (serwowany z
+   naszego hostingu — zero żądań do Google). Interaktywną mapę Google wczytujemy
+   dopiero, gdy odwiedzający zaakceptuje cookies w banerze LUB kliknie placeholder. */
+function initContactMap() {
+  const holder = document.querySelector('.map-container[data-map]');
+  if (!holder) return;
+
+  // Pełna zgoda (teraz lub z poprzedniej wizyty) → od razu interaktywna mapa
+  if (localStorage.getItem('cookies-accepted') === 'true') {
+    loadMap(holder);
+    return;
+  }
+  // Inaczej: kliknięcie obrazka = świadome załadowanie samej mapy
+  holder.querySelector('[data-load-map]')?.addEventListener('click', () => loadMap(holder));
+}
+
+function loadMap(holder) {
+  if (!holder || holder.dataset.loaded) return;
+  holder.dataset.loaded = '1';
+  const iframe = document.createElement('iframe');
+  iframe.src = holder.dataset.map;
+  iframe.loading = 'lazy';
+  iframe.title = 'Lokalizacja — Siedlec 3, 32-065 Krzeszowice';
+  iframe.referrerPolicy = 'no-referrer-when-downgrade';
+  iframe.setAttribute('allowfullscreen', '');
+  holder.innerHTML = '';
+  holder.appendChild(iframe);
 }
 
 /* ----- Toast (styl Sonner: zwijane w talię, rozwijane po najechaniu) ----- */
