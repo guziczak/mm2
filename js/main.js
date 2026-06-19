@@ -244,8 +244,17 @@ function initContactMap() {
     loadMap(holder);
     return;
   }
-  // Inaczej: kliknięcie obrazka = świadome załadowanie samej mapy
-  holder.querySelector('[data-load-map]')?.addEventListener('click', () => loadMap(holder));
+  // Inaczej: kliknięcie obrazka = świadoma zgoda → ładuje mapę Google ORAZ chowa baner cookies,
+  // żeby nie było stanu „baner wisi, a Google już załadowane".
+  holder.querySelector('[data-load-map]')?.addEventListener('click', () => {
+    localStorage.setItem('cookies-accepted', 'true');
+    loadMap(holder);
+    const banner = document.querySelector('.cookie-banner');
+    if (banner) {
+      banner.classList.remove('visible');
+      setTimeout(() => banner.remove(), 300);
+    }
+  });
 }
 
 function loadMap(holder) {
