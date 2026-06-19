@@ -1286,18 +1286,10 @@ p + p { margin-top: var(--space-sm); }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: var(--space-sm);
   padding: var(--space-md);
   text-align: center;
-  background: rgba(30, 26, 22, 0.45);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.map-placeholder:hover .map-placeholder__cover,
-.map-placeholder:focus-visible .map-placeholder__cover {
-  opacity: 1;
 }
 
 .map-placeholder__btn {
@@ -1308,13 +1300,17 @@ p + p { margin-top: var(--space-sm); }
   border-radius: var(--border-radius);
   font-weight: 700;
   letter-spacing: 0.5px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
 .map-placeholder__note {
-  max-width: 34ch;
+  max-width: 46ch;
   font-size: var(--fs-sm);
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.92);
+  color: #fff;
+  background: rgba(20, 18, 16, 0.82);
+  padding: 0.5em 0.85em;
+  border-radius: var(--border-radius);
 }
 
 /* Mapa: na węższych ekranach poziomy prostokąt zamiast sztywnych 400px (inaczej na telefonie wychodzi kwadrat) */

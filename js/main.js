@@ -120,27 +120,24 @@ function initCookieConsent() {
   const banner = document.querySelector('.cookie-banner');
   if (!banner) return;
 
-  if (localStorage.getItem('cookies-accepted')) {
-    banner.remove();
-    return;
-  }
-
-  setTimeout(() => banner.classList.add('visible'), 1000);
-
   banner.querySelector('[data-accept]')?.addEventListener('click', () => {
     localStorage.setItem('cookies-accepted', 'true');
-    // Pełna zgoda → od razu podmień obrazek mapy na interaktywną mapę Google
+    banner.classList.remove('visible');
+    // Zgoda na cookies → załaduj interaktywną mapę Google (jeśli jest na stronie)
     const holder = document.querySelector('.map-container[data-map]');
     if (holder) loadMap(holder);
-    banner.classList.remove('visible');
-    setTimeout(() => banner.remove(), 300);
   });
 
   banner.querySelector('[data-reject]')?.addEventListener('click', () => {
     localStorage.setItem('cookies-accepted', 'essential');
     banner.classList.remove('visible');
-    setTimeout(() => banner.remove(), 300);
   });
+
+  // Baner zostaje w DOM (żeby dało się go pokazać ponownie po kliknięciu w mapę);
+  // pokazujemy go tylko, gdy użytkownik jeszcze nie zdecydował.
+  if (!localStorage.getItem('cookies-accepted')) {
+    setTimeout(() => banner.classList.add('visible'), 1000);
+  }
 }
 
 /* ----- Scroll to Top ----- */
@@ -231,29 +228,22 @@ function initContactForm() {
   });
 }
 
-/* ----- Mapa kontaktowa (ładowana dopiero po zgodzie) -----
-   Domyślnie pokazujemy statyczny obrazek z img/mapa-kontakt.jpg (serwowany z
-   naszego hostingu — zero żądań do Google). Interaktywną mapę Google wczytujemy
-   dopiero, gdy odwiedzający zaakceptuje cookies w banerze LUB kliknie placeholder. */
+/* ----- Mapa kontaktowa (mapa Google dopiero po zgodzie na cookies) -----
+   Domyślnie statyczny obrazek img/mapa-kontakt.png (z naszego hostingu — zero Google,
+   zero cookies). Interaktywną mapę Google ładujemy po akceptacji cookies w banerze.
+   Klik w mapę bez zgody = toast z prośbą o akceptację + pokazanie banera (mapy NIE ładuje). */
 function initContactMap() {
   const holder = document.querySelector('.map-container[data-map]');
   if (!holder) return;
 
-  // Pełna zgoda (teraz lub z poprzedniej wizyty) → od razu interaktywna mapa
   if (localStorage.getItem('cookies-accepted') === 'true') {
     loadMap(holder);
     return;
   }
-  // Inaczej: kliknięcie obrazka = świadoma zgoda → ładuje mapę Google ORAZ chowa baner cookies,
-  // żeby nie było stanu „baner wisi, a Google już załadowane".
   holder.querySelector('[data-load-map]')?.addEventListener('click', () => {
-    localStorage.setItem('cookies-accepted', 'true');
-    loadMap(holder);
+    showToast('Aby zobaczyć wersję Google Maps, zaakceptuj pliki cookies.', 'info');
     const banner = document.querySelector('.cookie-banner');
-    if (banner) {
-      banner.classList.remove('visible');
-      setTimeout(() => banner.remove(), 300);
-    }
+    if (banner) banner.classList.add('visible');
   });
 }
 
