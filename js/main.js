@@ -23,7 +23,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileNav();
-  initFAQ();
   initCookieConsent();
   initScrollTop();
   initRevealAnimations();
@@ -70,6 +69,7 @@ function initMobileNav() {
     toggle.classList.remove('active');
     navList.classList.remove('open');
     if (overlay) overlay.classList.remove('visible');
+    document.body.classList.remove('nav-open');
     document.body.style.overflow = '';
   }
 
@@ -77,6 +77,7 @@ function initMobileNav() {
     toggle.classList.add('active');
     navList.classList.add('open');
     if (overlay) overlay.classList.add('visible');
+    document.body.classList.add('nav-open');
     document.body.style.overflow = 'hidden';
   }
 
@@ -94,24 +95,6 @@ function initMobileNav() {
 
   navList.querySelectorAll('.nav__link').forEach(link => {
     link.addEventListener('click', closeNav);
-  });
-}
-
-/* ----- FAQ Accordion ----- */
-function initFAQ() {
-  document.querySelectorAll('.faq-item__question').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.closest('.faq-item');
-      const isActive = item.classList.contains('active');
-
-      item.closest('.faq-list')
-        ?.querySelectorAll('.faq-item.active')
-        .forEach(el => el.classList.remove('active'));
-
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
   });
 }
 
