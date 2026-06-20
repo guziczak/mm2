@@ -1125,21 +1125,11 @@ p + p { margin-top: var(--space-sm); }
     overscroll-behavior: contain;
   }
 
-  /* Pasek nagłówka panelu — wysokość headera, więc etykieta „Menu" stoi w jednej
-     linii z przyciskiem X, a górna przestrzeń nie jest już pusta */
+  /* Górny odstęp panelu na wysokość headera — pozycje nie wchodzą pod logo/X */
   .nav__list::before {
-    content: "Menu";
+    content: "";
     flex: 0 0 auto;
-    display: flex;
-    align-items: center;
     height: var(--header-height);
-    margin: 0 0 var(--space-md);
-    font-family: var(--font-body);
-    font-size: var(--fs-sm);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--color-accent);
   }
 
   .nav__list.open {
