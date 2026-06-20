@@ -230,9 +230,9 @@ function initContactForm() {
 
 /* ----- Mapa kontaktowa (mapa Google dopiero po zgodzie na cookies) -----
    Domyślnie statyczny obrazek img/mapa-kontakt.png (z naszego hostingu — zero Google,
-   zero cookies) — pełnoprawna mapa, widoczna w całości. Pod nią pasek .map-caption z CTA.
+   zero cookies) — pełnoprawna, czysta mapa. Na hover/focus przyciemnia się (scrim).
    Interaktywną mapę Google ładujemy po akceptacji cookies w banerze.
-   Klik w CTA bez zgody = toast z prośbą o akceptację + pokazanie banera (mapy NIE ładuje). */
+   Klik w mapę bez zgody = toast z prośbą o akceptację + pulsujące guziki banera (mapy NIE ładuje). */
 function initContactMap() {
   const holder = document.querySelector('.map-container[data-map]');
   if (!holder) return;
@@ -241,18 +241,16 @@ function initContactMap() {
     loadMap(holder);
     return;
   }
-  document.querySelectorAll('[data-load-map]').forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      showToast('Aby zobaczyć wersję Google Maps, zaakceptuj pliki cookies.', 'info');
-      const banner = document.querySelector('.cookie-banner');
-      if (!banner) return;
-      banner.classList.add('visible');
-      // Pulsnij przyciskami banera, żeby zwrócić uwagę, gdzie kliknąć
-      banner.querySelectorAll('.btn').forEach((b) => {
-        b.classList.remove('is-pulsing');
-        void b.offsetWidth; // reflow → restart animacji przy kolejnym kliknięciu
-        b.classList.add('is-pulsing');
-      });
+  holder.querySelector('[data-load-map]')?.addEventListener('click', () => {
+    showToast('Najpierw zaakceptuj pliki cookies.', 'info');
+    const banner = document.querySelector('.cookie-banner');
+    if (!banner) return;
+    banner.classList.add('visible');
+    // Pulsnij przyciskami banera (2×), żeby zwrócić uwagę, gdzie kliknąć
+    banner.querySelectorAll('.btn').forEach((b) => {
+      b.classList.remove('is-pulsing');
+      void b.offsetWidth; // reflow → restart animacji przy kolejnym kliknięciu
+      b.classList.add('is-pulsing');
     });
   });
 }
@@ -268,8 +266,6 @@ function loadMap(holder) {
   iframe.setAttribute('allowfullscreen', '');
   holder.innerHTML = '';
   holder.appendChild(iframe);
-  // Mapa interaktywna załadowana → pasek „podgląd statyczny" jest już zbędny
-  document.querySelector('[data-map-caption]')?.remove();
 }
 
 /* ----- Toast (styl Sonner: zwijane w talię, rozwijane po najechaniu) ----- */

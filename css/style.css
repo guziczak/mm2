@@ -1248,16 +1248,13 @@ p + p { margin-top: var(--space-sm); }
 }
 
 /* ----- 23. Map ----- */
-.map-block {
-  margin-top: var(--space-xl);
-}
-
 .map-container {
   width: 100%;
   height: 400px;
   border-radius: var(--border-radius);
   overflow: hidden;
   border: 1px solid var(--color-border);
+  margin-top: var(--space-xl);
 }
 
 .map-container iframe {
@@ -1266,55 +1263,68 @@ p + p { margin-top: var(--space-sm); }
   border: 0;
 }
 
-/* Statyczny podgląd mapy — pełnoprawna mapa OSM, widoczna bez zasłaniania */
-.map-container picture {
+/* Statyczny podgląd mapy = klikalny przycisk. W spoczynku czysta mapa;
+   na hover/focus/tap przyciemnia się (scrim) i pokazuje podpowiedź.
+   Klik bez zgody na cookies → toast + pulsujące guziki banera (js/main.js). */
+.map-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  position: relative;
+  cursor: pointer;
+}
+
+.map-placeholder picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.map-container img {
+.map-placeholder img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Pasek POD mapą: informuje, że to podgląd statyczny + CTA do interaktywnej mapy Google.
-   Nigdy nie zasłania mapy. Usuwany przez JS po załadowaniu mapy Google. */
-.map-caption {
+.map-placeholder__cover {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xs) var(--space-sm);
-  margin: var(--space-xs) 0 0;
-  padding: 0.55em 0.55em 0.55em 0.9em;
-  background: var(--color-bg-warm);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  font-size: var(--fs-sm);
-  color: var(--color-muted);
-}
-
-.map-caption__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.5em 1.1em;
-  background: var(--color-accent);
-  color: var(--color-white);
-  border: 0;
-  border-radius: var(--border-radius);
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
+  justify-content: center;
+  background: rgba(20, 18, 15, 0);
   transition: background-color var(--transition);
 }
 
-.map-caption__link:hover,
-.map-caption__link:focus-visible {
-  background: var(--color-accent-dark);
+.map-placeholder:hover .map-placeholder__cover,
+.map-placeholder:focus-visible .map-placeholder__cover,
+.map-placeholder:active .map-placeholder__cover {
+  background: rgba(20, 18, 15, 0.5);
+}
+
+.map-placeholder__hint {
+  padding: 0.6em 1.4em;
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.map-placeholder:hover .map-placeholder__hint,
+.map-placeholder:focus-visible .map-placeholder__hint {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Mapa: na węższych ekranach poziomy prostokąt zamiast sztywnych 400px (inaczej na telefonie wychodzi kwadrat) */
@@ -1322,11 +1332,6 @@ p + p { margin-top: var(--space-sm); }
   .map-container {
     height: auto;
     aspect-ratio: 16 / 9;
-  }
-
-  .map-caption {
-    justify-content: center;
-    text-align: center;
   }
 }
 

@@ -162,20 +162,16 @@
       </div>
 
       <!-- Map -->
-      <div class="map-block reveal">
-        <div class="map-container" data-map="https://maps.google.com/maps?q=Siedlec%203%2C%2032-065%20Krzeszowice&hl=pl&z=16&output=embed">
+      <div class="map-container reveal" data-map="https://maps.google.com/maps?q=Siedlec%203%2C%2032-065%20Krzeszowice&hl=pl&z=16&output=embed">
+        <button type="button" class="map-placeholder" data-load-map aria-label="Pokaż interaktywną mapę Google — wymaga zgody na pliki cookies">
           <picture>
             <source media="(max-width: 768px)" srcset="img/mapa-kontakt-mobile.png">
             <img src="img/mapa-kontakt.png" alt="Mapa — Siedlec 3, 32-065 Krzeszowice z okolicznymi punktami" loading="lazy" width="1920" height="720">
           </picture>
-        </div>
-        <p class="map-caption" data-map-caption>
-          <span class="map-caption__label">Podgląd statyczny mapy</span>
-          <button type="button" class="map-caption__link" data-load-map>
-            Zobacz w Google Maps
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </button>
-        </p>
+          <span class="map-placeholder__cover" aria-hidden="true">
+            <span class="map-placeholder__hint">Zobacz w Google Maps</span>
+          </span>
+        </button>
       </div>
     </div>
   </section>
