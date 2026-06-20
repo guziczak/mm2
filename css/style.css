@@ -1041,6 +1041,12 @@ p + p { margin-top: var(--space-sm); }
   animation: cookieBtnPulse 0.6s ease 2;
 }
 
+/* Re-prompt po wyborze „tylko niezbędne" (klik w mapę): nie oferujemy ponownie
+   „Tylko niezbędne" — zostaje wyłącznie zgoda na wszystkie cookies. */
+.cookie-banner--accept-all [data-reject] {
+  display: none;
+}
+
 /* ----- 18. Mobile Phone Button ----- */
 .mobile-cta {
   display: none;
@@ -1302,9 +1308,11 @@ p + p { margin-top: var(--space-sm); }
   transition: background-color var(--transition);
 }
 
-.map-placeholder:hover .map-placeholder__cover,
+/* Scrim widoczny: focus klawiaturą, wciśnięcie oraz tap na mobile (.is-revealed z JS).
+   Hover jest niżej w @media (hover: hover), żeby na dotyku scrim się nie „przyklejał". */
 .map-placeholder:focus-visible .map-placeholder__cover,
-.map-placeholder:active .map-placeholder__cover {
+.map-placeholder:active .map-placeholder__cover,
+.map-placeholder.is-revealed .map-placeholder__cover {
   background: rgba(20, 18, 15, 0.5);
 }
 
@@ -1321,10 +1329,22 @@ p + p { margin-top: var(--space-sm); }
   transition: opacity var(--transition), transform var(--transition);
 }
 
-.map-placeholder:hover .map-placeholder__hint,
-.map-placeholder:focus-visible .map-placeholder__hint {
+.map-placeholder:focus-visible .map-placeholder__hint,
+.map-placeholder.is-revealed .map-placeholder__hint {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hover tylko na urządzeniach z kursorem — na dotyku reveal robi JS (initContactMap) */
+@media (hover: hover) {
+  .map-placeholder:hover .map-placeholder__cover {
+    background: rgba(20, 18, 15, 0.5);
+  }
+
+  .map-placeholder:hover .map-placeholder__hint {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mapa: na węższych ekranach poziomy prostokąt zamiast sztywnych 400px (inaczej na telefonie wychodzi kwadrat) */

@@ -241,17 +241,54 @@ function initContactMap() {
     loadMap(holder);
     return;
   }
-  holder.querySelector('[data-load-map]')?.addEventListener('click', () => {
-    showToast('Najpierw zaakceptuj pliki cookies.', 'info');
+  const placeholder = holder.querySelector('[data-load-map]');
+  const coarse = window.matchMedia('(hover: none)'); // ekran dotykowy (bez kursora)
+
+  placeholder?.addEventListener('click', () => {
     const banner = document.querySelector('.cookie-banner');
+    // Po wyborze „tylko niezbędne" nie pytamy o to ponownie — chodzi już tylko
+    // o zgodę na WSZYSTKIE cookies (potrzebną do mapy Google).
+    const essentialOnly = localStorage.getItem('cookies-accepted') === 'essential';
+
+    showToast(
+      essentialOnly
+        ? 'Aby wyświetlić interaktywną mapę Google, zaakceptuj wszystkie pliki cookies.'
+        : 'Najpierw zaakceptuj pliki cookies.',
+      'info'
+    );
+
+    // Mobile: tap pokazuje scrim + podpowiedź (na desktopie robi to :hover)
+    if (coarse.matches) placeholder.classList.add('is-revealed');
+
     if (!banner) return;
+
+    // Tryb „tylko wszystkie": chowa guzik „Tylko niezbędne", dopasowuje tekst i etykietę
+    banner.classList.toggle('cookie-banner--accept-all', essentialOnly);
+    if (essentialOnly) {
+      const textEl = banner.querySelector('.cookie-banner__text');
+      if (textEl) {
+        textEl.innerHTML =
+          'Interaktywna mapa Google używa plików cookies Google. Zaakceptuj wszystkie, aby ją wyświetlić. ' +
+          '<a href="polityka-prywatnosci.html">Dowiedz się więcej</a>.';
+      }
+      const acceptBtn = banner.querySelector('[data-accept]');
+      if (acceptBtn) acceptBtn.textContent = 'Akceptuję wszystkie';
+    }
+
     banner.classList.add('visible');
-    // Pulsnij przyciskami banera (2×), żeby zwrócić uwagę, gdzie kliknąć
+    // Pulsnij widocznymi przyciskami banera (2×), żeby zwrócić uwagę, gdzie kliknąć
     banner.querySelectorAll('.btn').forEach((b) => {
       b.classList.remove('is-pulsing');
       void b.offsetWidth; // reflow → restart animacji przy kolejnym kliknięciu
       b.classList.add('is-pulsing');
     });
+  });
+
+  // Mobile: tap poza mapą chowa scrim + podpowiedź; ponowny tap w mapę znów je pokaże
+  document.addEventListener('click', (e) => {
+    if (placeholder && !placeholder.contains(e.target)) {
+      placeholder.classList.remove('is-revealed');
+    }
   });
 }
 
