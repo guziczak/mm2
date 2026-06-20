@@ -1097,6 +1097,8 @@ p + p { margin-top: var(--space-sm); }
   /* Mobile nav */
   .nav__toggle {
     display: flex;
+    position: relative;
+    z-index: 2;
   }
 
   .nav__toggle.active span {
