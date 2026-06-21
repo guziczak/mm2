@@ -300,6 +300,10 @@ function showToast(message, type = 'info', duration = 4000) {
     stack.setAttribute('role', 'status');
     stack.setAttribute('aria-live', 'polite');
     document.body.appendChild(stack);
+    // Tap poza rozwiniętą talią → zwiń ją z powrotem (na dotyku nie ma mouseleave)
+    document.addEventListener('click', (e) => {
+      if (toastsExpanded && !stack.contains(e.target)) collapseToasts();
+    });
   }
 
   // Podnieś toasty nad baner cookie, gdy jest otwarty
@@ -314,9 +318,15 @@ function showToast(message, type = 'info', duration = 4000) {
   toast._duration = duration;
   stack.appendChild(toast);
 
-  toast.addEventListener('mouseenter', expandToasts);
-  toast.addEventListener('mouseleave', scheduleCollapseToasts);
-  toast.addEventListener('click', () => removeToast(toast));
+  // Desktop: hover rozwija/zwija talię. Dotyk (brak hovera): pierwszy tap rozwija,
+  // kolejny tap w kafelek go usuwa, a tap poza talią ją zwija (listener przy tworzeniu stosu).
+  const coarse = window.matchMedia('(hover: none)').matches;
+  toast.addEventListener('mouseenter', () => { if (!coarse) expandToasts(); });
+  toast.addEventListener('mouseleave', () => { if (!coarse) scheduleCollapseToasts(); });
+  toast.addEventListener('click', () => {
+    if (coarse && !toastsExpanded) expandToasts();
+    else removeToast(toast);
+  });
 
   requestAnimationFrame(layoutToasts); // wjazd + przebudowa talii
   toast._timer = setTimeout(() => removeToast(toast), duration);
@@ -371,15 +381,19 @@ function expandToasts() {
   layoutToasts();
 }
 
+function collapseToasts() {
+  clearTimeout(toastCollapseTimer);
+  if (!toastsExpanded) return;
+  toastsExpanded = false;
+  document.querySelectorAll('.toast').forEach((t) => {
+    if (!t._removing) t._timer = setTimeout(() => removeToast(t), t._duration || 4000);
+  });
+  layoutToasts();
+}
+
 function scheduleCollapseToasts() {
   clearTimeout(toastCollapseTimer);
-  toastCollapseTimer = setTimeout(() => {
-    toastsExpanded = false;
-    document.querySelectorAll('.toast').forEach((t) => {
-      if (!t._removing) t._timer = setTimeout(() => removeToast(t), t._duration || 4000);
-    });
-    layoutToasts();
-  }, 140);
+  toastCollapseTimer = setTimeout(collapseToasts, 140);
 }
 
 /* ----- Hero Slider ----- */
