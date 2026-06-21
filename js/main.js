@@ -207,7 +207,7 @@ function initContactForm() {
 
     showToast('Otwieram Twój program pocztowy…', 'success');
     window.location.href = href;
-    setTimeout(() => form.reset(), 1500);
+    // Celowo NIE czyścimy pól — jeśli program pocztowy nie wystartuje, wpisana treść nie przepada.
   });
 }
 
